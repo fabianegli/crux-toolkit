@@ -29,7 +29,8 @@ RUN apt-get update && apt-get -y install \
   libssl-dev \
   uuid-dev \
   zlib1g-dev \
-  libpulse-dev
+  libpulse-dev \
+  unzip
 
 RUN mkdir /app
 RUN mkdir /home/crux && \
