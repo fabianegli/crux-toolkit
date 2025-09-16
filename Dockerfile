@@ -1,4 +1,4 @@
-FROM debian:buster-slim as base
+FROM debian:bookworm-slim as base
 
 ###
 # Install certs
