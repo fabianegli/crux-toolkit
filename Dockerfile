@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim as base
+FROM debian:bullseye-slim as base
 
 ###
 # Install certs
@@ -20,6 +20,7 @@ LABEL description="Build layers - crux-toolkit"
 # Required system packages
 RUN apt-get update && apt-get -y install \
   build-essential \
+  libgcc-10-dev \
   cmake \
   curl \
   git \
