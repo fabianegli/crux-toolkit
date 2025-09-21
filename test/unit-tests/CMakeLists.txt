@@ -266,6 +266,8 @@ else()
     cometsearch
     kojaksearch
     crux-lfq-support
+    ssl
+    crypto
     libneopepxmlparser.a
     gflags
     bullseye

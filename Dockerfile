@@ -1,4 +1,4 @@
-FROM debian:buster-slim as base
+FROM debian:bullseye-slim AS base
 
 ###
 # Install certs
@@ -9,7 +9,7 @@ RUN apt-get update \
       ca-certificates \
       && rm -rf /var/lib/apt/lists/*
 
-FROM base as builder
+FROM base AS builder
 
 ###
 # Build the binary. These intermediate layers will be discarded.
@@ -20,6 +20,7 @@ LABEL description="Build layers - crux-toolkit"
 # Required system packages
 RUN apt-get update && apt-get -y install \
   build-essential \
+  libgcc-10-dev \
   cmake \
   curl \
   git \
@@ -29,7 +30,8 @@ RUN apt-get update && apt-get -y install \
   libssl-dev \
   uuid-dev \
   zlib1g-dev \
-  libpulse-dev
+  libpulse-dev \
+  unzip
 
 RUN mkdir /app
 RUN mkdir /home/crux && \
