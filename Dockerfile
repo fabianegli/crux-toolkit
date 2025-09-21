@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim as base
+FROM debian:bullseye-slim AS base
 
 ###
 # Install certs
@@ -9,7 +9,7 @@ RUN apt-get update \
       ca-certificates \
       && rm -rf /var/lib/apt/lists/*
 
-FROM base as builder
+FROM base AS builder
 
 ###
 # Build the binary. These intermediate layers will be discarded.
